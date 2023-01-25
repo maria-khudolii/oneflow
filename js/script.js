@@ -26,12 +26,11 @@ if (reviewsSwiper) {
       });
 }
 
-let menu = document.querySelector('.menu');
+document.addEventListener('click', documentClick);
 
-menu.addEventListener('click', event => {
-  event.target.classList.toggle("open")
-});
-
-let burger = document.querySelector('.menu__burger');
-
-burger.addEventListener('click', () => menu.classList.toggle('menu-open'));
+function documentClick(e) {
+	const targetItem = e.target;
+	if (targetItem.closest('.icon-menu')) {
+		document.documentElement.classList.toggle('menu-open');
+	}
+}
